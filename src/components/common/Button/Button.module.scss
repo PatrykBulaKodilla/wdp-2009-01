@@ -49,3 +49,11 @@
   background-color: $primary;
   color: #ffffff;
 }
+
+.oldPrice {
+  @extend .small;
+  background-color: transparent;
+  text-decoration: line-through;
+  color: $old-price-text-color;
+  font-weight: 700;
+}
