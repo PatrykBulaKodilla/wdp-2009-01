@@ -12,17 +12,17 @@ $text-color: #2a2a2a;
 
 $form-border-color: #292929;
 
-@mixin transition-time {
+.transition-time {
   transition: color 250ms, background-color 250ms;
 }
 
 @mixin button-hover-effect($bg-color: $primary, $text-color: #ffffff) {
-  @include transition-time;
+  @extend .transition-time;
   color: $text-color !important;
   background-color: $bg-color;
   text-decoration: none;
 
   /* Preparation for possible transform effects:  */
-  //transform: translateX(5px);
+  //transform: translateX(2px);
   //transition: transform 250ms;
 }
