@@ -92,6 +92,8 @@
             &.active,
             &:hover {
               background-color: $primary;
+              @extend .transition-time;
+              @extend .custom-transitions;
             }
           }
         }
