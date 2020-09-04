@@ -13,6 +13,7 @@
 
   &:not(.noHover):hover {
     @include button-hover-effect;
+    @extend .custom-transitions;
   }
 }
 
@@ -34,5 +35,6 @@
 
   &:not(.noHover):hover {
     @include button-hover-effect($bg-color: #2a2a2a, $text-color: #ffffff);
+    @extend .custom-transitions;
   }
 }

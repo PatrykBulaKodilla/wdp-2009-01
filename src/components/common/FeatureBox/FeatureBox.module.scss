@@ -66,10 +66,14 @@
   &:hover {
     .iconWrapper {
       color: #ffffff;
+      @extend .transition-time;
+      @extend .custom-transitions;
 
       &::after {
         background-color: $primary;
         border-color: $primary;
+        @extend .transition-time;
+        @extend .custom-transitions;
       }
     }
 
