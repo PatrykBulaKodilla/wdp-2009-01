@@ -10,6 +10,7 @@ const Button = ({
   favorite,
   compare,
   className: propClassName,
+  allProduct,
   ...props
 }) => {
   const classes = [];
@@ -34,7 +35,7 @@ const Button = ({
   }
 
   return (
-    <Comp href='#' {...props} className={classes.join(' ')}>
+    <Comp href='/' {...props} className={classes.join(' ')}>
       {children}
     </Comp>
   );
@@ -47,6 +48,7 @@ Button.propTypes = {
   variant: PropTypes.string,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
+  allProduct: PropTypes.array,
 };
 
 export default Button;
