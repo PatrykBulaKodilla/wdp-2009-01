@@ -11,12 +11,14 @@
     display: flex;
     align-items: center;
     position: relative;
+    transition: background-color 0.2s;
 
     .icon:first-child {
       color: $primary;
       position: absolute;
       left: 10px;
       z-index: 0;
+      transition: color 0.2s;
     }
 
     .icon:last-child {
@@ -27,11 +29,19 @@
 
     select {
       -webkit-appearance: none;
+      font-size: 14px;
+      outline: none;
       border: 0;
       background-color: transparent;
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
+    }
+    &:hover{
+      background-color: $primary;
+      .icon:first-child{
+        color: white;
+      }
     }
   }
 

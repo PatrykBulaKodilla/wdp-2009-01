@@ -1,9 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  background-color: #ffffff;
-  position: relative;
+  box-shadow: 2px 3.464px 6px $color-dark;
+  background-color: $menubar-bg;
 
   :global(.container) > :global(.row) {
     height: 84px;
@@ -34,14 +33,14 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      border-top: 4px solid #ffffff;
+      border-top: 4px solid $color-light;
       font-weight: 500;
       letter-spacing: 1px;
 
       &:hover,
       &.active {
         background-color: $primary;
-        color: #ffffff;
+        color: $color-light;
         border-color: $primary;
       }
 
