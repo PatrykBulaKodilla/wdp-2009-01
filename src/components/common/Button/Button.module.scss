@@ -17,6 +17,8 @@
     text-decoration: none;
     @include button-hover-effect;
     @extend .custom-transitions;
+    @include button-hover-effect;
+    @extend .custom-transitions;
   }
 }
 
