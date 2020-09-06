@@ -1,8 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
-  background-color: #ffffff;
+  box-shadow: 2px 3.464px 6px $color-dark;
+  background-color: $menubar-bg;
 
   :global(.container) > :global(.row) {
     height: 84px;
@@ -11,6 +11,7 @@
   .menu {
     display: flex;
     align-self: stretch;
+    
 
     ul {
       margin: 0;
@@ -32,14 +33,14 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      border-top: 4px solid #ffffff;
+      border-top: 4px solid $color-light;
       font-weight: 500;
       letter-spacing: 1px;
 
       &:hover,
       &.active {
         background-color: $primary;
-        color: #ffffff;
+        color: $color-light;
         border-color: $primary;
       }
 
@@ -47,5 +48,111 @@
         border-color: $text-color;
       }
     }
+  }
+}
+
+.hamburger {
+  display: none !important;
+  width: auto;
+  padding: 10px;
+  margin-right: auto;
+  float: right;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+}
+
+.hamburger_box {
+  width: 30px;
+  height: 15px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger_inner {
+  width: 100%;
+  height: 5px;
+  background-color: $header-bg;
+  position: absolute;
+  border-radius: 3px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color .3s .1s ease-in-out;
+}
+.hamburger_inner::before,
+.hamburger_inner::after {
+  width: 100%;
+  height: 5px;
+  background-color: $header-bg;
+  position: absolute;
+  border-radius: 3px;
+  content: '';
+  left: 0;
+  transition: transform .3s ease-in-out;
+}
+
+.hamburger_inner::before{
+  top: -10px;
+}
+
+.hamburger_inner::after{
+  top: 10px;
+}
+
+.hamburger_active .hamburger_inner {
+  background-color: transparent;
+}
+
+.hamburger_active .hamburger_inner:before {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger_active .hamburger_inner::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+
+ .menu {
+   position: absolute;
+   top: 80px;
+   left: 0;
+   z-index: 2;
+   width: 100vw;
+   height: 100vw;
+   background-color: $header-bg;
+   transform: translateX(100vw);
+  transition: transform .2s ease-in-out;
+
+   ul {
+     display: block !important;
+     width: 100%;
+   }
+
+   a {
+     width: 100%;
+     color: white !important;
+   }
+ }
+ .menu_visible {
+  display: block;
+  transform: translateX(0);
+}
+ 
+ .hamburger {
+   display: inline-block !important;
+ }
+}
+
+@media(min-width: 768px) and (max-width: 1199px) {
+  .menu {
+    order: -1;
+    margin-bottom: 10px;
+  }
+
+  .root {
+    height: 120px;
   }
 }
