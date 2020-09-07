@@ -37,3 +37,22 @@ $text-color: $color-dark;
 $text-color-light: $color-light;
 
 $form-border-color: $color-dark-two;
+
+.transition-time {
+  transition: color 250ms, background-color 250ms, border-color 250ms;
+}
+
+.custom-transitions {
+  text-decoration: none;
+  // place to try custom transitions
+}
+
+@mixin button-hover-effect($bg-color: $primary, $text-color: #ffffff) {
+  @extend .transition-time;
+  color: $text-color !important;
+  background-color: $bg-color;
+
+  /* Preparation for possible transform effects:  */
+  //transform: translateX(2px);
+  //transition: transform 250ms;
+}

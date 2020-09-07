@@ -17,8 +17,11 @@
         font-size: 13px;
 
         &:hover {
+          
           color: $primary;
           text-decoration: none;
+          @extend .transition-time;
+          @extend .custom-transitions;
         }
       }
     }
