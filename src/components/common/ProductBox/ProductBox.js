@@ -52,23 +52,16 @@ const ProductBox = ({ id, name, oldPrice, price, promo, stars, favorite, compare
         </Button>
       </div>
 
-      {oldPrice ? (
-        <div className={styles.price}>
+      <div className={styles.price}>
+        {oldPrice && (
           <Button noHover variant='oldPrice'>
             $ {oldPrice}
           </Button>
-
-          <Button noHover variant='small'>
-            $ {price}
-          </Button>
-        </div>
-      ) : (
-        <div className={styles.price}>
-          <Button noHover variant='small'>
-            $ {price}
-          </Button>
-        </div>
-      )}
+        )}
+        <Button noHover variant='small'>
+          $ {price}
+        </Button>
+      </div>
     </div>
   </div>
 );
