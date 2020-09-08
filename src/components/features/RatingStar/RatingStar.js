@@ -8,7 +8,7 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 const RatingStar = ({ stars, starsRating, changeRating, index }) => (
   <div className={styles.stars}>
     {[5, 4, 3, 2, 1].map(i => (
-      <a key={i} href='/' className={'b' + i && 'transition-time'}>
+      <a key={i} href='/' className={'b' + i}>
         {starsRating ? (
           i <= starsRating ? (
             <FontAwesomeIcon

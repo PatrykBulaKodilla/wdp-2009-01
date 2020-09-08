@@ -12,12 +12,16 @@
     
     &:hover{
         color: $primary;
-        
+        @extend .transition-time;
+        @extend .custom-transitions;
+    }
+    &:hover ~ a{
+        color: $primary;
+        @extend .transition-time;
+        @extend .custom-transitions;
     }
     }
 }
 
-a:hover ~ a{
-    color: $primary;
-}
+
 
