@@ -41,5 +41,19 @@
     .icon {
       margin-right: 5px;
     }
+
+    p {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .topMenu p {
+    display: none !important;
+  }
+  .topMenu {
+    width: 30% !important;
   }
 }

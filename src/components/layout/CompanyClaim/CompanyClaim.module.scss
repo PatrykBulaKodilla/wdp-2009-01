@@ -2,6 +2,7 @@
 
 .root {
   background-color: $header-bg;
+  display: flex;
 
   :global(.container) > :global(.row) {
     height: 145px;
@@ -71,5 +72,42 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+ 
+  .root {
+    :global(.container) > :global(.row) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    }
+  }
+  .logo {
+    order: 1;
+    flex: 0 0 100%;
+    width: 50%;
+  }
+  
+  .phoneNumber {
+    order: 3;
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 0;
+
+    p {
+    font-size: 14px !important;
+    text-align: right;
+    flex-wrap: wrap;
+    }
+  }
+
+  .cart {
+    order: 2;
+    flex: 0 0 50%;
+    width: 50%;
   }
 }
