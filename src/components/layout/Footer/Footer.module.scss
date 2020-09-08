@@ -49,6 +49,7 @@
     }
 
     .copyright {
+      text-align: center;
       p {
         margin: 0;
         color: $color-light-two;
@@ -58,6 +59,7 @@
     }
 
     .socialMedia {
+      text-align: center;
       ul {
         margin: 0;
         padding: 0;
@@ -81,4 +83,43 @@
       }
     }
   }
+}
+
+@media (min-width: 992px) {
+  .root {
+    .bottomBar {
+      .copyright {
+        text-align: center;
+      }
+      .socialMedia {
+        text-align: right;
+      }
+    }
+  }    
+}
+
+@media (min-width: 768px) {
+  .root {
+    .bottomBar {
+      .copyright {
+        text-align: left;
+      }
+    }
+  }    
+}
+
+@media (min-width: 576px) {
+  .root {
+    .bottomBar {
+      .copyright {
+        p {
+          text-align: center;
+        }
+        
+      }
+      .socialMedia { 
+        text-align: center;
+      }
+    }
+  }    
 }
