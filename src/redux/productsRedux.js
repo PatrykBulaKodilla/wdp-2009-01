@@ -13,10 +13,11 @@ const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
 const CHANGE_FAVORITE = createActionName('CHANGE_FAVORITE');
+const CHANGE_RATING = createActionName('CHANGE_RATING');
 
 /* action creators */
 export const changeFavorite = (payload, id) => ({ payload, id, type: CHANGE_FAVORITE });
-
+export const changeRating = (payload, id) => ({ payload, id, type: CHANGE_RATING });
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
@@ -26,7 +27,12 @@ export default function reducer(statePart = [], action = {}) {
           favorite: { $set: action.payload },
         },
       });
-
+    case CHANGE_RATING:
+      return update(statePart, {
+        [action.id]: {
+          starsRating: { $set: action.payload },
+        },
+      });
     default:
       return statePart;
   }
