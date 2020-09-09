@@ -11,6 +11,7 @@ import RatingStarContainer from '../../features/RatingStar/RatingStarContainer';
 const ProductBox = ({
   id,
   name,
+  oldPrice,
   price,
   promo,
   stars,
@@ -60,7 +61,13 @@ const ProductBox = ({
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
+
       <div className={styles.price}>
+        {oldPrice && (
+          <Button noHover variant='oldPrice'>
+            $ {oldPrice}
+          </Button>
+        )}
         <Button noHover variant='small'>
           $ {price}
         </Button>
@@ -78,6 +85,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
+  oldPrice: PropTypes.number,
   changeFavorite: PropTypes.func,
   index: PropTypes.number,
   starsRating: PropTypes.number,
