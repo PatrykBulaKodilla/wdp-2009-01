@@ -1,17 +1,63 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+// START LIST OF COLORS - DO NOT CHANGE
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+$color-light: #ffffff;
+$color-light-two: #d8d8d8;
+$color-light-three: #b6b6b6;
 
-$primary: #d58e32;
+$color-dark: #2a2a2a;
+$color-dark-two: #363636;
+$color-dark-three: #434343;
 
-$text-color: #2a2a2a;
+$color-orange: #d58e32;
 
 $form-border-color: #292929;
 
 $old-price-text-color: #d82a2a;
 
 $newFurniture-animation-time: 1s;
+// END LIST OF COLORS
+
+$button-main-bg: $color-dark;
+$button-main-color: $color-light;
+$button-main-hover-bg: $color-orange;
+
+$menubar-bg: $color-light;
+
+$productbox-bg: $color-light;
+
+$sale-tag-bg: $color-dark;
+$sale-tag-color: $color-light;
+
+$header-topbar-bg: $color-dark-three;
+$header-bg: $color-dark-two;
+
+$footer-claim-bg: $color-dark-three;
+$footer-bg: $color-dark-two;
+
+$primary: $color-orange;
+
+$text-color: $color-dark;
+$text-color-light: $color-light;
+
+$form-border-color: $color-dark-two;
+
+.transition-time {
+  transition: color 250ms, background-color 250ms, border-color 250ms;
+}
+
+.custom-transitions {
+  text-decoration: none;
+  // place to try custom transitions
+}
+
+@mixin button-hover-effect($bg-color: $primary, $text-color: #ffffff) {
+  @extend .transition-time;
+  color: $text-color !important;
+  background-color: $bg-color;
+
+  /* Preparation for possible transform effects:  */
+  //transform: translateX(2px);
+  //transition: transform 250ms;
+}

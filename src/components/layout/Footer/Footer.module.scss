@@ -7,7 +7,7 @@
 
     .menuWrapper {
       h6 {
-        color: #ffffff;
+        color: $color-light;
         text-transform: uppercase;
         margin: 0 0 1rem 0;
       }
@@ -20,10 +20,10 @@
           a {
             font-size: 14px;
             line-height: 30px;
-            color: rgb(169, 169, 169);
+            color: $color-light-two;
 
             &:hover {
-              color: #ffffff;
+              color: $color-light;
             }
           }
         }
@@ -49,15 +49,17 @@
     }
 
     .copyright {
+      text-align: center;
       p {
         margin: 0;
-        color: rgb(169, 169, 169);
+        color: $color-light-two;
         font-size: 14px;
         line-height: 26px;
       }
     }
 
     .socialMedia {
+      text-align: center;
       ul {
         margin: 0;
         padding: 0;
@@ -68,15 +70,56 @@
           margin-left: 1rem;
 
           a {
-            color: rgb(169, 169, 169);
+            color: $color-light-two;
             text-decoration: none;
 
             &:hover {
               color: $primary;
+              @extend .transition-time;
+              @extend .custom-transitions;
             }
           }
         }
       }
     }
   }
+}
+
+@media (min-width: 992px) {
+  .root {
+    .bottomBar {
+      .copyright {
+        text-align: center;
+      }
+      .socialMedia {
+        text-align: right;
+      }
+    }
+  }    
+}
+
+@media (min-width: 768px) {
+  .root {
+    .bottomBar {
+      .copyright {
+        text-align: left;
+      }
+    }
+  }    
+}
+
+@media (min-width: 576px) {
+  .root {
+    .bottomBar {
+      .copyright {
+        p {
+          text-align: center;
+        }
+        
+      }
+      .socialMedia { 
+        text-align: center;
+      }
+    }
+  }    
 }

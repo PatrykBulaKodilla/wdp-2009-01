@@ -13,12 +13,15 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $color-light;
         font-size: 13px;
 
         &:hover {
+          
           color: $primary;
           text-decoration: none;
+          @extend .transition-time;
+          @extend .custom-transitions;
         }
       }
     }
@@ -38,5 +41,19 @@
     .icon {
       margin-right: 5px;
     }
+
+    p {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .topMenu p {
+    display: none !important;
+  }
+  .topMenu {
+    width: 30% !important;
   }
 }

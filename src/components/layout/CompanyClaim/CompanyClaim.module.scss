@@ -2,6 +2,7 @@
 
 .root {
   background-color: $header-bg;
+  display: flex;
 
   :global(.container) > :global(.row) {
     height: 145px;
@@ -12,7 +13,7 @@
       margin: 0;
       font-size: 17px;
       line-height: 42px;
-      color: rgb(216, 216, 216);
+      color: $color-light-two;
       font-weight: 500;
 
       .icon {
@@ -29,7 +30,7 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $color-light;
 
       .cartIcon {
         background-color: $primary;
@@ -47,15 +48,16 @@
       }
 
       .cartCounter {
-        width: 28px;
-        height: 27px;
+        min-width: 28px;
+        min-height: 27px;
+        padding: 2px 0 2px 2px;
         border-radius: 14px;
         background-color: $header-bg;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 14px;
-        color: rgb(224, 227, 237);
+        color: $color-light-two;
         position: absolute;
         top: 50%;
         right: 0;
@@ -65,8 +67,47 @@
       &:hover {
         .cartIcon {
           background-color: lighten($primary, 10%);
+          @extend .transition-time;
+          @extend .custom-transitions;
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+ 
+  .root {
+    :global(.container) > :global(.row) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    }
+  }
+  .logo {
+    order: 1;
+    flex: 0 0 100%;
+    width: 50%;
+  }
+  
+  .phoneNumber {
+    order: 3;
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 0;
+
+    p {
+    font-size: 14px !important;
+    text-align: right;
+    flex-wrap: wrap;
+    }
+  }
+
+  .cart {
+    order: 2;
+    flex: 0 0 50%;
+    width: 50%;
   }
 }
