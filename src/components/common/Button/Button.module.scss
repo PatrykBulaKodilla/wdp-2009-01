@@ -4,17 +4,21 @@
 // }
 
 .main {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $button-main-bg;
+  color: $button-main-color;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
 
   &:not(.noHover):hover {
-    color: #ffffff !important;
-    background-color: $primary;
+    color: $button-main-color !important;
+    background-color: $button-main-hover-bg;
     text-decoration: none;
+    @include button-hover-effect;
+    @extend .custom-transitions;
+    @include button-hover-effect;
+    @extend .custom-transitions;
   }
 }
 
@@ -29,14 +33,16 @@
 .outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  border: 1px solid $color-dark;
+  color: $color-dark;
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: #2a2a2a;
-    color: #ffffff;
+    background-color: $color-dark;
+    color: $color-light;
+    @include button-hover-effect($bg-color: $color-dark, $text-color: $color-light);
+    @extend .custom-transitions;
   }
 }
 
