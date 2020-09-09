@@ -6,6 +6,7 @@
 
   :global(.container) > :global(.row) {
     height: 84px;
+    position: relative;
   }
 
   .menu {
@@ -57,7 +58,7 @@
   display: none !important;
   width: auto;
   padding: 10px;
-  margin-right: auto;
+  margin-left: auto;
   float: right;
   cursor: pointer;
   background-color: transparent;
@@ -117,35 +118,33 @@
 
 @media (max-width: 768px) {
 
- .menu {
-   position: absolute;
-   top: 80px;
-   left: 0;
-   z-index: 2;
-   width: 100vw;
-   height: 100vw;
-   background-color: $header-bg;
-   transform: translateX(100vw);
-  transition: transform .2s ease-in-out;
+  .menu {
+    display:none !important;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vw;
+    background-color: $header-bg;
 
-   ul {
-     display: block !important;
-     width: 100%;
-   }
+    ul {
+      display: block !important;
+      width: 100%;
+    }
 
-   a {
-     width: 100%;
-     color: white !important;
-   }
- }
- .menu_visible {
-  display: block;
-  transform: translateX(0);
-}
- 
- .hamburger {
-   display: inline-block !important;
- }
+    a {
+      width: 100%;
+      color: white !important;
+    }
+  }
+  .menu_visible {
+    display: block !important;
+  }
+  
+  .hamburger {
+    display: inline-block !important;
+  }
 }
 
 @media(min-width: 768px) and (max-width: 1199px) {
