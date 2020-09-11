@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ProductBox.module.scss';
+import styles from './HotDeals.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import Button from '../Button/Button';
-import RatingStarContainer from '../../features/RatingStar/RatingStarContainer';
+import Button from '../../common/Button/Button';
+import RatingStarContainer from '../RatingStar/RatingStarContainer';
 
-const ProductBox = ({
+const HotDeals = ({
   id,
   name,
   oldPrice,
@@ -20,10 +20,22 @@ const ProductBox = ({
   changeFavorite,
   index,
   starsRating,
-  addComparing,
-  getAll,
 }) => (
   <div className={styles.root}>
+    <div className={styles.topBar}>
+      <h4>HOT DEALS</h4>
+      <ul>
+        <li>
+          <a href='/' className={styles.active}></a>
+        </li>
+        <li>
+          <a href='/'></a>
+        </li>
+        <li>
+          <a href='/'></a>
+        </li>
+      </ul>
+    </div>
     <div
       className={styles.photo}
       style={{
@@ -32,10 +44,27 @@ const ProductBox = ({
     >
       {promo && <div className={styles.sale}>{promo}</div>}
       <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
         <Button variant='small'>
           <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
         </Button>
+      </div>
+      <div className={styles.timer}>
+        <div>
+          <h5>25</h5>
+          <h6>Days</h6>
+        </div>
+        <div>
+          <h5>10</h5>
+          <h6>Hrs</h6>
+        </div>
+        <div>
+          <h5>45</h5>
+          <h6>mins</h6>
+        </div>
+        <div>
+          <h5>30</h5>
+          <h6>secs</h6>
+        </div>
       </div>
     </div>
     <div className={styles.content}>
@@ -59,15 +88,7 @@ const ProductBox = ({
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button
-          compare={compare}
-          variant='outline'
-          onClick={event => {
-            return getAll.length === 4
-              ? event.preventDefault()
-              : (event.preventDefault(), addComparing(id));
-          }}
-        >
+        <Button compare={compare} variant='outline'>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -86,7 +107,7 @@ const ProductBox = ({
   </div>
 );
 
-ProductBox.propTypes = {
+HotDeals.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   id: PropTypes.string,
@@ -99,8 +120,6 @@ ProductBox.propTypes = {
   changeFavorite: PropTypes.func,
   index: PropTypes.number,
   starsRating: PropTypes.number,
-  addComparing: PropTypes.func,
-  getAll: PropTypes.array,
 };
 
-export default ProductBox;
+export default HotDeals;

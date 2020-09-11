@@ -1,0 +1,30 @@
+@import "../../../styles/settings.scss";
+
+.compare_box {
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: none;
+}
+
+.compare_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.compare_list_left {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    size: 20px;
+}
+
+.compare_item {
+    display: flex;
+}
+
