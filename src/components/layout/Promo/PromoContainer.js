@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Promo from './Promo';
-import { getAll } from '../../../redux/productsRedux.js';
+import { getDeals } from '../../../redux/productsRedux.js';
 
 const mapStateToProps = state => ({
-  products: getAll(state),
+  products: getDeals(state),
 });
 
 export default connect(mapStateToProps)(Promo);

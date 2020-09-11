@@ -22,7 +22,20 @@ const HotDeals = ({
   starsRating,
 }) => (
   <div className={styles.root}>
-    {/* {console.log(id,name.oldPrice)} */}
+    <div className={styles.topBar}>
+      <h4>HOT DEALS</h4>
+      <ul>
+        <li>
+          <a href='/' className={styles.active}></a>
+        </li>
+        <li>
+          <a href='/'></a>
+        </li>
+        <li>
+          <a href='/'></a>
+        </li>
+      </ul>
+    </div>
     <div
       className={styles.photo}
       style={{
@@ -31,10 +44,27 @@ const HotDeals = ({
     >
       {promo && <div className={styles.sale}>{promo}</div>}
       <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
         <Button variant='small'>
           <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
         </Button>
+      </div>
+      <div className={styles.timer}>
+        <div>
+          <h5>25</h5>
+          <h6>Days</h6>
+        </div>
+        <div>
+          <h5>10</h5>
+          <h6>Hrs</h6>
+        </div>
+        <div>
+          <h5>45</h5>
+          <h6>mins</h6>
+        </div>
+        <div>
+          <h5>30</h5>
+          <h6>secs</h6>
+        </div>
       </div>
     </div>
     <div className={styles.content}>

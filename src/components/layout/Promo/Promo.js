@@ -1,15 +1,22 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import HotDeals from '../../features/HotDeals/HotDeals';
+import PropTypes from 'prop-types';
+import HotDealsContainer from '../../features/HotDeals/HotDealsContainer';
 import styles from './Promo.module.scss';
 
-const Promo = products => (
+const Promo = ({ products }) => (
   <div className={styles.root}>
-    {console.log(products)}
-    <HotDeals product={products.products[1]} />
+    <div className='container'>
+      <div className='row'>
+        <div className={'col-4 ' + styles.fadeIn}>
+          <HotDealsContainer {...products} />
+        </div>
+      </div>
+    </div>
   </div>
 );
 
-Promo.propTypes = {};
+Promo.propTypes = {
+  products: PropTypes.object,
+};
 
 export default Promo;

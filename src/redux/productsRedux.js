@@ -3,6 +3,12 @@ import update from 'immutability-helper';
 /* selectors */
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
+export const getDeals = ({ products }) => {
+  const index = products.findIndex(product => product.hotDeal === true);
+  const hotDeal = products.find(product => product.hotDeal === true);
+  hotDeal.index = index;
+  return hotDeal;
+};
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
