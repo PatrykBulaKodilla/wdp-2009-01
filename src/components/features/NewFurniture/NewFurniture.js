@@ -26,11 +26,25 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, currentRwdMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
+    let countPerPage = 8;
+
+    if (currentRwdMode === 'tablet') {
+      countPerPage = 3;
+    } else if (currentRwdMode === 'mobile') {
+      countPerPage = 2;
+    } else {
+      countPerPage = 8;
+    }
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / countPerPage);
+
+    console.log('how many pages needed: ', pagesCount);
+
+    //console.log('current Rwd in new furniture: ', currentRwdMode);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -78,7 +92,6 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-
               <div
                 key={item.id}
                 className={
@@ -119,6 +132,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  currentRwdMode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
