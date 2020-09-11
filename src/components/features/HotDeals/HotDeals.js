@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './HotDeals.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 import RatingStarContainer from '../RatingStar/RatingStarContainer';
 
@@ -78,6 +78,9 @@ const HotDeals = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
+        <Button variant='outline'>
+          <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
+        </Button>
         <Button
           compare={favorite}
           variant='outline'
