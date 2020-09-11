@@ -32,9 +32,9 @@ class NewFurniture extends React.Component {
     let countPerPage = 8;
 
     if (currentRwdMode === 'tablet') {
-      countPerPage = 3;
-    } else if (currentRwdMode === 'mobile') {
       countPerPage = 2;
+    } else if (currentRwdMode === 'mobile') {
+      countPerPage = 1;
     } else {
       countPerPage = 8;
     }
@@ -91,19 +91,21 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div
-                key={item.id}
-                className={
-                  'col-3' + (this.state.setActive ? styles.fadeIn : styles.fadeOut)
-                }
-              >
-                <ProductBoxContainer
-                  {...item}
-                  index={products.findIndex(product => product.id === item.id)}
-                />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(activePage * countPerPage, (activePage + 1) * countPerPage)
+              .map(item => (
+                <div
+                  key={item.id}
+                  className={
+                    'col-3' + (this.state.setActive ? styles.fadeIn : styles.fadeOut)
+                  }
+                >
+                  <ProductBoxContainer
+                    {...item}
+                    index={products.findIndex(product => product.id === item.id)}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>
