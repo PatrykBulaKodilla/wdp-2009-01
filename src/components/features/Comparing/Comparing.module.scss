@@ -5,13 +5,21 @@
     bottom: 0;
     box-sizing: border-box;
     background-color: #fff;
-    display: none;
+    z-index: 100;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.6);
+    transform: translateX(-50%);
+    left: 50%;
+    height: 100px;
+    width: 800px;
+
 }
 
 .compare_list {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px 30px;
+    height: 100%;
 
 }
 
@@ -21,10 +29,26 @@
 }
 
 p {
-    size: 20px;
+    margin: 0;
 }
 
 .compare_item {
-    display: flex;
+  margin-left: 40px;
+  cursor: pointer;
+  position: relative;
+
+  &:last-of-type {
+      margin-right: 40px;
+  }
+
+  &:hover img {
+      opacity: 0.5;
+  }
+
+
+}
+
+.compare_list_right {
+    margin-left: 40px;
 }
 

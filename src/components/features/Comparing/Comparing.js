@@ -13,9 +13,9 @@ const Comparing = ({ comparedProducts }) => (
             {comparedProducts.map(product => (
               <div className={styles.compare_item} key={product.id}>
                 <img
-                  src={product.photo}
-                  width='40'
-                  height='40'
+                  src={require('../../../images/products/' + product.id + '.jpg')}
+                  width='80'
+                  height='80'
                   alt={product.category}
                 ></img>
               </div>
