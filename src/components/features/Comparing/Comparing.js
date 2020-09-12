@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../../common/Button/Button';
 import styles from './Comparing.module.scss';
 
-const Comparing = ({ comparedProducts }) => (
+const Comparing = ({ comparedProducts, deleteComparing }) => (
   <div className='container'>
     {comparedProducts.length >= 1 && (
       <div className={styles.compare_box}>
@@ -11,15 +11,21 @@ const Comparing = ({ comparedProducts }) => (
           <div className={styles.compare_list_left}>
             <p>Compare</p>
             {comparedProducts.map(product => (
-              <div className={styles.compare_item} key={product.id}>
+              <div key={product} className={styles.compare_item}>
                 <img
-                  src={require('../../../images/products/' + product.id + '.jpg')}
+                  src={require('../../../images/products/' + product + '.jpg')}
                   width='80'
                   height='80'
                   alt={product.category}
+                  onClick={() =>
+                    deleteComparing(
+                      comparedProducts.findIndex(idProduct => idProduct === product)
+                    )
+                  }
                 ></img>
               </div>
             ))}
+
             <div className={styles.compare_list_right}>
               <Button variant='small'>Compare</Button>
             </div>
@@ -32,6 +38,7 @@ const Comparing = ({ comparedProducts }) => (
 
 Comparing.propTypes = {
   comparedProducts: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  deleteComparing: PropTypes.func,
 };
 
 export default Comparing;

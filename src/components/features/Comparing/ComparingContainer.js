@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  deleteComparing: (payload, id) => dispatch(deleteComparing(payload, id)),
+  deleteComparing: id => dispatch(deleteComparing(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Comparing);
