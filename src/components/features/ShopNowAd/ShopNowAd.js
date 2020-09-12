@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './ShopNowAd.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import {
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+} from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
-import RatingStarContainer from '../../features/RatingStar/RatingStarContainer';
 
 const ShopNowAd = ({
   id,
@@ -30,15 +31,27 @@ const ShopNowAd = ({
       }}
     >
       <div className={styles.banner}>
-        <h2>INDOOR FURNITURE</h2>
+        <h2>
+          <span>INDOOR</span> FURNITURE
+        </h2>
         <h3>SAVE UP TO 50% OF ALL FURNITURE</h3>
       </div>
       <div className={styles.buttons}>
-        <Button variant='small'>Shop Now</Button>
+        <Button variant='bigWhite'>Shop Now</Button>
       </div>
     </div>
-    <div className={styles.topBar}>
-      <h4>HOT DEALS</h4>
+
+    <div className={styles.wrapper}>
+      <a href='/' className={styles.bottomBar}>
+        <h4>
+          <FontAwesomeIcon icon={faArrowAltCircleLeft}></FontAwesomeIcon>
+        </h4>
+      </a>
+      <a href='/' className={styles.bottomBar}>
+        <h4>
+          <FontAwesomeIcon icon={faArrowAltCircleRight}></FontAwesomeIcon>
+        </h4>
+      </a>
     </div>
   </div>
 );

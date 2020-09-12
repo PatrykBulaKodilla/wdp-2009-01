@@ -5,13 +5,9 @@
     border: 1px solid $color-light-two;
     margin-bottom: 2rem;
   
-    .price :first-child{
-      transition: background-color 0.2s;
-    }
-  
     .photo {
       position: relative;
-      padding: 34% 0 0 0;
+      padding: 20% 0 0 0;
       background: {
         color: $color-light-two;
         size: cover;
@@ -20,93 +16,52 @@
       }
       overflow: hidden;
       .banner {
+          position: relative;
           background-color: rgba(0,0,0, 0.5);
+          padding: 40px 0 40px 0;
 
           h2{
-              color:white;
+              color:$text-color-light;
+              font-size: 60px;
+              text-align: center;
+              span {
+                  font-weight: lighter;
+              }
+
           }
           h3{
-              color: white;
+              color: $text-color-light;
+              text-align: center;
+              font-weight: lighter;
           }
-      }
-      .sale {
-        position: absolute;
-        top: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: $sale-tag-bg;
-        border-radius: 50%;
-        color: $sale-tag-color;
-        padding: 30px 15px 5px 15px;
       }
   
       .buttons {
         display: flex;
         justify-content: center;
-        margin-bottom:30%;
+        margin-bottom:14%;
+        transform: translateY(-50%);
         opacity: 1;
         transition: opacity 0.2s;
       }
     }
-  
-    .content {
-      text-align: center;
-      padding: 20px;
-  
-      h5 {
-        color: $primary;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 1px;
-      }
+    .wrapper{
+        display: flex;
+        .bottomBar{ 
+        background-color: $header-topbar-bg;
+        flex: 1;
+        &:hover {
+            @extend .transition-time;
+            background-color: $primary;
+        }
+        h4 {
+            text-align: center;
+            color: $text-color-light;
+            font-size: 17px;
+            padding: 8px 0 8px 20px;
+            margin: 0;
+        
+        }
+        }
     }
-  
-    .line {
-      margin: 0 10px;
-      border-bottom: 1px solid $color-dark;
-      position: relative;
-  
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: -1px;
-        left: 50%;
-        width: 30px;
-        border-bottom: 4px solid $primary;
-        transform: translateX(-50%);
-      }
-    }
-  
-    .actions {
-      padding: 15px 10px 10px 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    &:hover{
-      .buttons{
-        opacity: 1;
-      }
-      .price :first-child{
-        background-color: #d58e32;
-      }
-    }
-    .topBar{ 
-      background-color: $header-topbar-bg;
-      display: flex;
-      justify-content: space-between;
-      h4 {
-        color: $text-color-light;
-        font-size: 17px;
-        padding: 10px 0 10px 20px;
-        margin: 0;
-      }
-    }
-  }
-  
-  .price {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+}

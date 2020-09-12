@@ -30,6 +30,14 @@
   font-weight: 400;
 }
 
+.bigWhite {
+  @extend .main;
+  background-color: $button-main-color;
+  color: $button-main-bg;
+  border-radius: 5px;
+  padding: 15px 30px;
+}
+
 .outline {
   display: inline-block;
   padding: 5px 10px;
