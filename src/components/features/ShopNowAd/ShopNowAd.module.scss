@@ -1,0 +1,67 @@
+@import "../../../styles/settings.scss";
+
+.root {
+    background-color: $productbox-bg;
+    border: 1px solid $color-light-two;
+    margin-bottom: 2rem;
+  
+    .photo {
+      position: relative;
+      padding: 20% 0 0 0;
+      background: {
+        color: $color-light-two;
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+      }
+      overflow: hidden;
+      .banner {
+          position: relative;
+          background-color: rgba(0,0,0, 0.5);
+          padding: 40px 0 40px 0;
+
+          h2{
+              color:$text-color-light;
+              font-size: 60px;
+              text-align: center;
+              span {
+                  font-weight: lighter;
+              }
+
+          }
+          h3{
+              color: $text-color-light;
+              text-align: center;
+              font-weight: lighter;
+          }
+      }
+  
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom:14%;
+        transform: translateY(-50%);
+        opacity: 1;
+        transition: opacity 0.2s;
+      }
+    }
+    .wrapper{
+        display: flex;
+        .bottomBar{ 
+        background-color: $header-topbar-bg;
+        flex: 1;
+        &:hover {
+            @extend .transition-time;
+            background-color: $primary;
+        }
+        h4 {
+            text-align: center;
+            color: $text-color-light;
+            font-size: 17px;
+            padding: 8px 0 8px 20px;
+            margin: 0;
+        
+        }
+        }
+    }
+}
