@@ -1,0 +1,79 @@
+@import '../../../styles/settings.scss';
+
+.root {
+    .slider {
+        display: flex;
+        padding: 25px 5px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        border-top: 2px solid $brands-border;
+        border-bottom: 2px solid $brands-border;
+        justify-content: space-around;
+    }
+
+    .preview {
+        width: 35px;
+        height: 95px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        &::before {
+            content: "<";
+            display: flex;
+            height: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &:hover {
+            background-color: $primary;
+        }
+    }
+
+    .next {
+        width: 35px;
+        height: 95px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        &::before {
+            content: ">";
+            display: flex;
+            height: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &:hover {
+            background-color: $primary;
+        }
+    }
+
+    .thumbnails {
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        display: flex;
+    }
+
+    .thumbnail {
+        height: 95px;
+        width: 150px;
+        border: 2px solid $brands-border;
+        object-fit: cover;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        opacity: 0.5;
+        position: relative;
+
+        & img {
+            height: 40%;
+        }
+    }
+}
