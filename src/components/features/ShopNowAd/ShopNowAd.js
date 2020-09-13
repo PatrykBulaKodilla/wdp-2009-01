@@ -9,21 +9,8 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
-const ShopNowAd = ({
-  id,
-  name,
-  oldPrice,
-  price,
-  promo,
-  stars,
-  favorite,
-  compare,
-  changeFavorite,
-  index,
-  starsRating,
-}) => (
+const ShopNowAd = ({ id }) => (
   <div className={styles.root}>
-    {console.log(id)}
     <div
       className={styles.photo}
       style={{

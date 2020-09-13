@@ -23,8 +23,8 @@
     .timer {
       display: flex;
       justify-content: space-evenly;
-      opacity: 0.7;
-
+      opacity: 0;
+      
       div {
         display: flex;
         flex-direction: column;
@@ -64,7 +64,7 @@
       display: flex;
       justify-content: center;
       margin-bottom:30%;
-      opacity: 1;
+      opacity: 0;
       @extend .transition-time;
     }
   }
@@ -109,6 +109,10 @@
     }
     .price :first-child{
       background-color: #d58e32;
+    }
+    .timer{
+     
+        opacity: 0.7;
     }
   }
   .topBar{ 

@@ -26,9 +26,7 @@ const HotDeals = ({
       <h4>HOT DEALS</h4>
       <ul>
         <li>
-          <a href='/' className={styles.active}>
-            {' '}
-          </a>
+          <a href='/' className={styles.active}></a>
         </li>
         <li>
           <a href='/'> </a>
