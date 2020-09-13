@@ -32,36 +32,27 @@
     }
 
     .compare_item {
-    margin-left: 40px;
-    cursor: pointer;
-    position: relative;
+        margin-left: 40px;
+        cursor: pointer;
+        position: relative;
+        &:hover {
+            .mobile_close{
+                opacity: 1;
+            }
+        }
+    .mobile_close {
+        position: absolute;
+        opacity: 0;
+        right: 0;
+    }
     &:last-of-type {
         margin-right: 40px;
     }
+
+
+
     &:hover img {
         opacity: 0.5;
-    }
-    &:before {
-        position: absolute;
-        top: 20px;
-        right: 5px;
-        left: 5px;
-        height: 2px;
-        content: "";
-        background: #000;
-        border-radius: 1px;
-        transform: rotate(-45deg);
-    }
-    &:after {
-        position: absolute;
-        top: 20px;
-        right: 5px;
-        left: 5px;
-        height: 2px;
-        content: "";
-        background: #000;
-        border-radius: 1px;
-        transform: rotate(-45deg);
     }
 
     }
@@ -69,6 +60,5 @@
     .compare_list_right {
         margin-left: 40px;
     }
-
-
+    
 }

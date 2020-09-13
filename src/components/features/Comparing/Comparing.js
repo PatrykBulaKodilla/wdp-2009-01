@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../common/Button/Button';
 import styles from './Comparing.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Comparing = ({ comparedProducts, deleteComparing }) => (
   <div className='container'>
@@ -11,18 +13,25 @@ const Comparing = ({ comparedProducts, deleteComparing }) => (
           <div className={styles.compare_list_left}>
             <p>Compare</p>
             {comparedProducts.map(product => (
-              <div key={product} className={styles.compare_item}>
+              <div
+                key={product}
+                className={styles.compare_item}
+                onClick={() =>
+                  deleteComparing(
+                    comparedProducts.findIndex(idProduct => idProduct === product)
+                  )
+                }
+              >
                 <img
                   src={require('../../../images/products/' + product + '.jpg')}
                   width='80'
                   height='80'
                   alt={product.category}
-                  onClick={() =>
-                    deleteComparing(
-                      comparedProducts.findIndex(idProduct => idProduct === product)
-                    )
-                  }
                 ></img>
+                <FontAwesomeIcon
+                  icon={faTimes}
+                  className={styles.mobile_close}
+                ></FontAwesomeIcon>
               </div>
             ))}
 
