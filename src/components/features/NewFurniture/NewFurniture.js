@@ -26,11 +26,25 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, currentRwdMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
+    let countPerPage = 8;
+
+    if (currentRwdMode === 'tablet') {
+      countPerPage = 2;
+    } else if (currentRwdMode === 'mobile') {
+      countPerPage = 1;
+    } else {
+      countPerPage = 8;
+    }
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / countPerPage);
+
+    console.log('how many pages needed: ', pagesCount);
+
+    //console.log('current Rwd in new furniture: ', currentRwdMode);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -77,20 +91,21 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-
-              <div
-                key={item.id}
-                className={
-                  'col-3' + (this.state.setActive ? styles.fadeIn : styles.fadeOut)
-                }
-              >
-                <ProductBoxContainer
-                  {...item}
-                  index={products.findIndex(product => product.id === item.id)}
-                />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(activePage * countPerPage, (activePage + 1) * countPerPage)
+              .map(item => (
+                <div
+                  key={item.id}
+                  className={
+                    'col-3' + (this.state.setActive ? styles.fadeIn : styles.fadeOut)
+                  }
+                >
+                  <ProductBoxContainer
+                    {...item}
+                    index={products.findIndex(product => product.id === item.id)}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -119,6 +134,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  currentRwdMode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
