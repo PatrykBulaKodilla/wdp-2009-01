@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './Brands.module.scss';
 import PropTypes from 'prop-types';
-import Button from '../../common/Button/Button';
+import 'react-alice-carousel/lib/scss/alice-carousel.scss';
+import AliceCarousel from 'react-alice-carousel';
 
 class Brands extends React.Component {
   static propTypes = {
@@ -26,15 +27,29 @@ class Brands extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.slider}>
-            <Button className={styles.preview}></Button>
-            <div className={styles.thumbnails}>
-              {brands.slice(0, countPerPage).map(brand => (
-                <div key={brand.id} className={styles.thumbnail}>
-                  <img src={brand.photo} alt={brand.name} />
-                </div>
-              ))}
-            </div>
-            <Button className={styles.next}></Button>
+            <AliceCarousel dotsDisabled={true}>
+              <div className={styles.thumbnails}>
+                {brands.slice(0, countPerPage).map(brand => (
+                  <div key={brand.id} className={styles.thumbnail}>
+                    <img src={brand.photo} alt={brand.name} />
+                  </div>
+                ))}
+              </div>
+              <div className={styles.thumbnails}>
+                {brands.slice(countPerPage, countPerPage * 2).map(brand => (
+                  <div key={brand.id} className={styles.thumbnail}>
+                    <img src={brand.photo} alt={brand.name} />
+                  </div>
+                ))}
+              </div>
+              <div className={styles.thumbnails}>
+                {brands.slice(countPerPage * 2, countPerPage * 3).map(brand => (
+                  <div key={brand.id} className={styles.thumbnail}>
+                    <img src={brand.photo} alt={brand.name} />
+                  </div>
+                ))}
+              </div>
+            </AliceCarousel>
           </div>
         </div>
       </div>
