@@ -8,7 +8,57 @@
   animation: fadeIn $newFurniture-animation-time forwards;
 }
 
+.fadeOut {
+  animation: fadeOut $newFurniture-animation-time forwards;
+}
+
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
+}
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.topBar{ 
+  background-color: $header-topbar-bg;
+  display: flex;
+  justify-content: space-between;
+  h4 {
+    color: $text-color-light;
+    font-size: 17px;
+    padding: 10px 0 10px 20px;
+    margin: 0;
+  }
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0 20px 0 0;
+    list-style: none;
+    background-color: $header-topbar-bg;
+    transform: translateY(15px);
+
+    li {
+      display: inline-block;
+      margin-left: 0.5rem;
+
+      a {
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 6px;
+        background-color: $color-light-two;
+        font-size: 0;
+
+        &.active,
+        &:hover {
+          background-color: $primary;
+          @extend .transition-time;
+          @extend .custom-transitions;
+        }
+      }
+    }
+  }
+
 }

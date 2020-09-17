@@ -4,10 +4,7 @@ import update from 'immutability-helper';
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 export const getDeals = ({ products }) => {
-  const index = products.findIndex(product => product.hotDeal === true);
-  const hotDeal = products.find(product => product.hotDeal === true);
-  hotDeal.index = index;
-  return hotDeal;
+  return products.filter(product => product.hotDeal);
 };
 
 export const getNew = ({ products }) =>

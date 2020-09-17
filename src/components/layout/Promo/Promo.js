@@ -8,9 +8,34 @@ const Promo = ({ products }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
-        <div className={'col-4 ' + styles.fadeIn}>
-          <HotDealsContainer {...products} />
-        </div>
+        {/* {tns({
+          container: '.my-slider',
+          items: 3,
+          slideBy: 'page',
+          autoplay: true,
+        })} */}
+        {/* <div className=' my-slider'>
+
+          <div>
+            <div className={'col-4 ' + styles.fadeIn + ' slide-item'} >1</div>
+          </div>
+        
+          <div>
+            <div className={'col-4 ' + styles.fadeIn + ' slide-item'} >2</div>
+          </div>
+        
+          <div>
+            <div className={'col-4 ' + styles.fadeIn + ' slide-item'} >3</div>
+          </div>
+        
+        </div> */}
+        {console.log(products)}
+        {products.map(product => (
+          <div className={'col-4 ' + styles.fadeIn + 'slide-item'} key={product.id}>
+            <HotDealsContainer {...product} />
+          </div>
+        ))}
+
         <div className={'col-8 ' + styles.fadeIn}>
           <ShopNowAdContainer {...products} />
         </div>
@@ -20,7 +45,7 @@ const Promo = ({ products }) => (
 );
 
 Promo.propTypes = {
-  products: PropTypes.object,
+  products: PropTypes.array,
 };
 
 export default Promo;

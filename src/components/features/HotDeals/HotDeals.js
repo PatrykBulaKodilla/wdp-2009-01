@@ -22,6 +22,7 @@ const HotDeals = ({
   starsRating,
 }) => (
   <div className={styles.root}>
+    {console.log(starsRating)}
     <div className={styles.topBar}>
       <h4>HOT DEALS</h4>
       <ul>
