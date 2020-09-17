@@ -3,35 +3,27 @@ import PropTypes from 'prop-types';
 import HotDealsContainer from '../../features/HotDeals/HotDealsContainer';
 import styles from './Promo.module.scss';
 import ShopNowAdContainer from '../../features/ShopNowAd/ShopNowAdContainer';
+import { observable } from 'rxjs/ajax';
 
+// let index =  0; Alternatywa rozwiązania poprzez state i observable
 const Promo = ({ products }) => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
-        {/* {tns({
-          container: '.my-slider',
-          items: 3,
-          slideBy: 'page',
-          autoplay: true,
-        })} */}
-        {/* <div className=' my-slider'>
+        {/* { window.setInterval(function(){
+          console.log(index);
+          if ( index < products.length -1){
+            index++;
+            
+          } else {
+            index = 0; 
+          }
+          
+          
+        }, 5000)} */}
 
-          <div>
-            <div className={'col-4 ' + styles.fadeIn + ' slide-item'} >1</div>
-          </div>
-        
-          <div>
-            <div className={'col-4 ' + styles.fadeIn + ' slide-item'} >2</div>
-          </div>
-        
-          <div>
-            <div className={'col-4 ' + styles.fadeIn + ' slide-item'} >3</div>
-          </div>
-        
-        </div> */}
-        {console.log(products)}
         {products.map(product => (
-          <div className={'col-4 ' + styles.fadeIn + 'slide-item'} key={product.id}>
+          <div className={'col-4 ' + styles.fadeIn} key={product.id}>
             <HotDealsContainer {...product} />
           </div>
         ))}
@@ -47,5 +39,4 @@ const Promo = ({ products }) => (
 Promo.propTypes = {
   products: PropTypes.array,
 };
-
 export default Promo;
