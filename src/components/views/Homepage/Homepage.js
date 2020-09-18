@@ -8,6 +8,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import ComparingContainer from '../../features/Comparing/ComparingContainer';
 import PromoContainer from '../../layout/Promo/PromoContainer';
 import Brands from '../../features/Brands/BrandsContainer';
+import Feedback from '../../features/Feedback/FeedbackContainer';
 import Promotion from '../../features/Promotion/PromotionContainer';
 
 const Homepage = () => (
@@ -17,6 +18,7 @@ const Homepage = () => (
     <Promotion />
     <NewFurniture />
     <ComparingContainer />
+    <Feedback />
     <Brands />
   </div>
 );

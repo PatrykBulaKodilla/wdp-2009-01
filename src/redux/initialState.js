@@ -457,6 +457,38 @@ const initialState = {
       photo: '/images/brands/brand-2.png',
     },
   ],
+  feedback: [
+    {
+      id: 'feedback-1',
+      photo: '/images/customers/customer-1.png',
+      message:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+      customer: {
+        name: 'Bob',
+        position: 'Furniture Client',
+      },
+    },
+    {
+      id: 'feedback-2',
+      photo: '/images/customers/customer-1.png',
+      message:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+      customer: {
+        name: 'Tom',
+        position: 'Sofa Client',
+      },
+    },
+    {
+      id: 'feedback-3',
+      photo: '/images/customers/customer-1.png',
+      message:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+      customer: {
+        name: 'Kate',
+        position: 'Bed Client',
+      },
+    },
+  ],
   promotionLeftBox: '<h3>Guest Room</h3><h3>Sofa</h3><h3>-20%</h3>',
   promotionRightBoxTop:
     '<h3><span>Office</span> Chair</h3><h3>collection</h3><h3>$ 200.00</h3>',
