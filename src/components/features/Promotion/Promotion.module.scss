@@ -100,6 +100,7 @@
     background-position: center;
   }
 
+  
   .rightBottomWrapper {
     position: relative;
     top: 10%;
@@ -120,7 +121,17 @@
     font-weight: bold;
   }
 
+  @media(max-width: 960px) {
+    .rightBottomWrapper {
+      left: 0;
+      text-align: center;
+    }
+
+    .leftBox {
+      margin-bottom: 40px;
+    }
+  }
   
 
-  
 }
+
