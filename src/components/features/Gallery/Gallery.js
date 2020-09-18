@@ -16,6 +16,7 @@ import initialState from '../../../redux/initialState';
 
 class Gallery extends React.Component {
   render() {
+    const { products } = this.props;
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -45,7 +46,10 @@ class Gallery extends React.Component {
 
               {/*Left side of the gallery*/}
               <div className={styles.product}>
-                <img src={initialState.products[0].id} alt='product-1' />
+                <img
+                  src={require('../../../images/products/' + products[3].id + '.jpg')}
+                  alt='product-1'
+                />
               </div>
               <div className={styles.buttons}>
                 <Tooltip
@@ -119,9 +123,9 @@ class Gallery extends React.Component {
                 </div>
                 <div className={styles.thumbnails}>
                   {initialState.products.slice(0, 6).map((product, index) => (
-                    <div key={product}>
+                    <div key={product.id}>
                       <img
-                        src={'../../../images/products/' + product + '.jpg'}
+                        src={require('../../../images/products/' + product.id + '.jpg')}
                         alt=''
                         className={
                           index === 0
@@ -140,7 +144,10 @@ class Gallery extends React.Component {
 
             {/*Right side of the gallery*/}
             <div className={'col-6' + styles.picture}>
-              <img src={initialState.products[2].id} alt='product' />
+              <img
+                src={require('../../../images/products/' + products[2].id + '.jpg')}
+                alt='product'
+              />
               <div className={styles.details}>
                 <h3>
                   from <span>$ {initialState.products[2].price}</span>
