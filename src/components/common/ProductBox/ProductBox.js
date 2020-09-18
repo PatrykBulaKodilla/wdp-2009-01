@@ -20,6 +20,8 @@ const ProductBox = ({
   changeFavorite,
   index,
   starsRating,
+  addComparing,
+  getAll,
 }) => (
   <div className={styles.root}>
     <div
@@ -57,7 +59,15 @@ const ProductBox = ({
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button compare={compare} variant='outline'>
+        <Button
+          compare={compare}
+          variant='outline'
+          onClick={event => {
+            return getAll.length === 4
+              ? event.preventDefault()
+              : (event.preventDefault(), addComparing(id));
+          }}
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -89,6 +99,8 @@ ProductBox.propTypes = {
   changeFavorite: PropTypes.func,
   index: PropTypes.number,
   starsRating: PropTypes.number,
+  addComparing: PropTypes.func,
+  getAll: PropTypes.array,
 };
 
 export default ProductBox;
