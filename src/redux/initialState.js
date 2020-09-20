@@ -472,7 +472,7 @@ const initialState = {
       id: 'feedback-2',
       photo: '/images/customers/customer-1.png',
       message:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+        'Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam',
       customer: {
         name: 'Tom',
         position: 'Sofa Client',
@@ -482,7 +482,7 @@ const initialState = {
       id: 'feedback-3',
       photo: '/images/customers/customer-1.png',
       message:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+        'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat',
       customer: {
         name: 'Kate',
         position: 'Bed Client',
