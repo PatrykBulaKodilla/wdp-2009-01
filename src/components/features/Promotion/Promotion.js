@@ -11,14 +11,14 @@ const Promotion = ({
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
-        <div className='col-6'>
+        <div className='col-lg-6 col-12'>
           <div className={styles.leftBox}>
             <div className={styles.leftWrapper}>
               {ReactHtmlParser(promotionLeftBox)}
             </div>
           </div>
         </div>
-        <div className='col-6'>
+        <div className='col-lg-6 col-12'>
           <div className='container'>
             <div className='row'>
               <div className='col-12'>
