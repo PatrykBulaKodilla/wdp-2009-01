@@ -53,6 +53,10 @@
             font-size: 16px;
             display: block;
             cursor: pointer;
+            @media (max-width: 990px) {
+              padding: 15px 2px;
+              font-size: 15px;
+            }
             
 
             &.active,
@@ -256,5 +260,11 @@
     }
   }
 
-  
+
+}
+
+@media (max-width: 990px ) {
+  .picture {
+    display: none;
+  }
 }
