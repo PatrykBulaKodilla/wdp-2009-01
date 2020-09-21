@@ -1,0 +1,50 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  text-align: center;
+  max-width: 300px;
+  margin: 20px auto;
+
+  .component {
+    padding: 20px 0;
+    .formHeader {
+      text-align: left;
+      p {
+        margin: 0;
+        &:nth-of-type(2) {
+          font-size: 0.7rem;
+        }
+      }
+
+    }
+
+    .textField {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .loginButton {
+      padding: 10px 0;
+      .button {
+        background-color: $primary;
+        width: 100%;
+        .link { 
+          color: $text-color-light;
+          text-decoration: none;
+        }
+      }
+    }
+    
+    .signIn {
+      text-decoration: underline;
+      font-size: 0.8rem;
+    }
+
+    .checkbox span {
+      font-size: 0.8rem;
+    }
+  }
+}
