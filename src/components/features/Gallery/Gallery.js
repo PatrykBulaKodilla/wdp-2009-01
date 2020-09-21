@@ -12,7 +12,6 @@ import {
 import Button from '../../common/Button/Button';
 import 'rc-tooltip/assets/bootstrap_white.css';
 import Tooltip from 'rc-tooltip';
-import initialState from '../../../redux/initialState';
 
 class Gallery extends React.Component {
   render() {
@@ -21,7 +20,7 @@ class Gallery extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-6'>
+            <div className='col-6 '>
               <div className={styles.heading}>
                 <h3>Furniture gallery</h3>
               </div>
@@ -50,69 +49,70 @@ class Gallery extends React.Component {
                   src={require('../../../images/products/' + products[3].id + '.jpg')}
                   alt='product-1'
                 />
-              </div>
-              <div className={styles.buttons}>
-                <Tooltip
-                  placement='right'
-                  overlay='Add to favorite'
-                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
-                >
-                  <Button variant='galleryBtn'>
-                    <FontAwesomeIcon icon={faHeart}>Add to favorites</FontAwesomeIcon>
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  placement='right'
-                  overlay='Add to compare'
-                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
-                >
-                  <Button variant='galleryBtn'>
-                    <FontAwesomeIcon icon={faExchangeAlt}>
-                      Add to compare
-                    </FontAwesomeIcon>
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  placement='right'
-                  overlay='View details'
-                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
-                >
-                  <Button variant='galleryBtn'>
-                    <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
-                  </Button>
-                </Tooltip>
-                <Tooltip
-                  placement='right'
-                  overlay='Add to basket'
-                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
-                >
-                  <Button variant='galleryBtn'>
-                    <FontAwesomeIcon icon={faShoppingBasket}>
-                      Add to basket
-                    </FontAwesomeIcon>
-                  </Button>
-                </Tooltip>
-              </div>
 
-              {/*Rating*/}
-              <div className={styles.content}>
-                <div className={styles.triangleTopLeft} />
-                <h5>{initialState.products[0].name}</h5>
-                <div className={styles.stars}>
-                  <span>
-                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                  </span>
+                <div className={styles.buttons}>
+                  <Tooltip
+                    placement='right'
+                    overlay='Add to favorite'
+                    arrowContent={<div className='rc-tooltip-arrow-inner' />}
+                  >
+                    <Button variant='galleryBtn'>
+                      <FontAwesomeIcon icon={faHeart}>Add to favorites</FontAwesomeIcon>
+                    </Button>
+                  </Tooltip>
+                  <Tooltip
+                    placement='right'
+                    overlay='Add to compare'
+                    arrowContent={<div className='rc-tooltip-arrow-inner' />}
+                  >
+                    <Button variant='galleryBtn'>
+                      <FontAwesomeIcon icon={faExchangeAlt}>
+                        Add to compare
+                      </FontAwesomeIcon>
+                    </Button>
+                  </Tooltip>
+                  <Tooltip
+                    placement='right'
+                    overlay='View details'
+                    arrowContent={<div className='rc-tooltip-arrow-inner' />}
+                  >
+                    <Button variant='galleryBtn'>
+                      <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
+                    </Button>
+                  </Tooltip>
+                  <Tooltip
+                    placement='right'
+                    overlay='Add to basket'
+                    arrowContent={<div className='rc-tooltip-arrow-inner' />}
+                  >
+                    <Button variant='galleryBtn'>
+                      <FontAwesomeIcon icon={faShoppingBasket}>
+                        Add to basket
+                      </FontAwesomeIcon>
+                    </Button>
+                  </Tooltip>
                 </div>
-                <div className={styles.triangleBottomRight} />
-                <div className={styles.price}>
-                  <h3>$ {initialState.products[0].price}</h3>
-                  <h3>
-                    <s>$ {initialState.products[0].oldPrice}</s>
-                  </h3>
+
+                {/*Rating*/}
+                <div className={styles.content}>
+                  <div className={styles.triangleTopLeft} />
+                  <h5>{products[0].name}</h5>
+                  <div className={styles.stars}>
+                    <span>
+                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    </span>
+                  </div>
+                  <div className={styles.triangleBottomRight} />
+                  <div className={styles.price}>
+                    <h3>${products[0].price}</h3>
+                    <h3>
+                      <s>${products[0].oldPrice}</s>
+                    </h3>
+                  </div>
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ class Gallery extends React.Component {
                   <p>{'<'}</p>
                 </div>
                 <div className={styles.thumbnails}>
-                  {initialState.products.slice(0, 6).map((product, index) => (
+                  {products.slice(0, 6).map((product, index) => (
                     <div key={product.id}>
                       <img
                         src={require('../../../images/products/' + product.id + '.jpg')}
@@ -143,16 +143,16 @@ class Gallery extends React.Component {
             </div>
 
             {/*Right side of the gallery*/}
-            <div className={'col-6' + styles.picture}>
+            <div className={'col-6 ' + styles.picture}>
               <img
                 src={require('../../../images/products/' + products[2].id + '.jpg')}
-                alt='product'
+                alt='product-2'
               />
               <div className={styles.details}>
                 <h3>
-                  from <span>$ {initialState.products[2].price}</span>
+                  from <span>$ {products[2].price}</span>
                 </h3>
-                <h1>{initialState.products[2].name}</h1>
+                <h1>{products[2].name}</h1>
                 <Button variant='greenBtn'>SHOP NOW</Button>
               </div>
             </div>
