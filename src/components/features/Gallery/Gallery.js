@@ -14,13 +14,40 @@ import 'rc-tooltip/assets/bootstrap_white.css';
 import Tooltip from 'rc-tooltip';
 
 class Gallery extends React.Component {
+  state = {
+    filteredArr: this.props.products.filter(el => el.newFurniture === true),
+    activePage: 0,
+  };
+
+  resize = () => this.forceUpdate();
+  componentDidMount() {
+    window.addEventListener('resize', this.resize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize);
+  }
+
   render() {
     const { products } = this.props;
+    const { filteredArr, activePage } = this.state;
+
+    const windowWidth = window.innerWidth;
+    let mode;
+    if (windowWidth > 1200) {
+      mode = 6;
+    } else if (windowWidth > 990) {
+      mode = 5;
+    } else if (windowWidth < 990) {
+      mode = 3;
+    } else {
+      mode = 5;
+    }
+
     return (
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-6 '>
+            <div className='col-12 col-md-6 col-lg-6 '>
               <div className={styles.heading}>
                 <h3>Furniture gallery</h3>
               </div>
@@ -122,19 +149,23 @@ class Gallery extends React.Component {
                   <p>{'<'}</p>
                 </div>
                 <div className={styles.thumbnails}>
-                  {products.slice(0, 6).map((product, index) => (
-                    <div key={product.id}>
-                      <img
-                        src={require('../../../images/products/' + product.id + '.jpg')}
-                        alt=''
-                        className={
-                          index === 0
-                            ? styles.thumbnail + ' ' + styles.active
-                            : styles.thumbnail
-                        }
-                      />
-                    </div>
-                  ))}
+                  {filteredArr
+                    .slice(activePage * mode, (activePage + 1) * mode)
+                    .map((product, index) => (
+                      <div key={product.id}>
+                        <img
+                          src={require('../../../images/products/' +
+                            product.id +
+                            '.jpg')}
+                          alt=''
+                          className={
+                            index === 0
+                              ? styles.thumbnail + ' ' + styles.active
+                              : styles.thumbnail
+                          }
+                        />
+                      </div>
+                    ))}
                 </div>
                 <div className={styles.next}>
                   <p>{'>'}</p>
