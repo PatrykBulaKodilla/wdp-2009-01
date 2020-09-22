@@ -425,7 +425,7 @@ const initialState = {
   cart: {
     products: [],
   },
-
+  comparing: [],
   brands: [
     {
       id: 'brand',
@@ -438,26 +438,63 @@ const initialState = {
       photo: '/images/brands/brand-2.png',
     },
     {
-      id: 'brand',
+      id: 'brand-3',
       name: 'Brand 3',
       photo: '/images/brands/brand.png',
     },
     {
-      id: 'brand-2',
+      id: 'brand-4',
       name: 'Brand 4',
       photo: '/images/brands/brand-2.png',
     },
     {
-      id: 'brand',
+      id: 'brand-5',
       name: 'Brand 5',
       photo: '/images/brands/brand.png',
     },
     {
-      id: 'brand-2',
+      id: 'brand-6',
       name: 'Brand 6',
       photo: '/images/brands/brand-2.png',
     },
   ],
+  feedback: [
+    {
+      id: 'feedback-1',
+      photo: '/images/customers/customer-1.png',
+      message:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+      customer: {
+        name: 'Bob',
+        position: 'Furniture Client',
+      },
+    },
+    {
+      id: 'feedback-2',
+      photo: '/images/customers/customer-1.png',
+      message:
+        'Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam',
+      customer: {
+        name: 'Tom',
+        position: 'Sofa Client',
+      },
+    },
+    {
+      id: 'feedback-3',
+      photo: '/images/customers/customer-1.png',
+      message:
+        'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat',
+      customer: {
+        name: 'Kate',
+        position: 'Bed Client',
+      },
+    },
+  ],
+  promotionLeftBox: '<h3>Guest Room</h3><h3>Sofa</h3><h3>-20%</h3>',
+  promotionRightBoxTop:
+    '<h3><span>Office</span> Chair</h3><h3>collection</h3><h3>$ 200.00</h3>',
+  promotionRightBoxBottom:
+    '<h3><span>Special</span> collection</h3><h3>save up 45% of furniture</h3>',
 };
 
 export default initialState;

@@ -11,7 +11,7 @@ const Promo = ({ products }) => (
         <div className={'col-4 ' + styles.fadeIn}>
           <HotDealsContainer {...products} />
         </div>
-        <div className={'col-8 ' + styles.fadeIn}>
+        <div className={'col-lg-8 col-sm-12' + styles.fadeIn}>
           <ShopNowAdContainer {...products} />
         </div>
       </div>
